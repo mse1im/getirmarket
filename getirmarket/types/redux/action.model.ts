@@ -2,6 +2,7 @@ export const SET_ITEMS = "SET_ITEMS";
 export const SET_BRANDS = "SET_BRANDS";
 
 export interface Item {
+  tags: any;
   manufacturer: string;
   itemType: string;
   name: string;

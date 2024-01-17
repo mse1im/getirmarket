@@ -1,15 +1,17 @@
+@import "@/app/styles/variables";
+
 .basket-lg {
     display: flex;
     flex-direction: column;
     border-radius: 2px;
-    background: #fff;
+    background: $white;
     height: 250px;
-    border: 10px solid #1ea4ce;
+    border: 10px solid $mainColor;
     padding: 24px;
     justify-content: space-between;
     align-items: flex-end;
   
-    @media (width < 768px) {
+    @media (width < $md) {
       position: fixed;
       right: 20px;
     }
@@ -29,13 +31,13 @@
 
     &-price {
         border-radius: 2px;
-        border: 2px solid #1ea4ce;
-        background: #fff;
+        border: 2px solid $mainColor;
+        background: $white;
         padding: 24px;
         min-width: 90px;
       
         span {
-          color: #1ea4ce;
+          color: $mainColor;
           text-align: right;
           font-style: normal;
           font-weight: 600;

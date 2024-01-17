@@ -1,6 +1,8 @@
+@import "@/app/styles/variables";
+
 header {
     display: flex;
-    background-color: #1ea4ce;
+    background-color: $mainColor;
     align-items: center;
     height: 77px;
 }
@@ -12,7 +14,7 @@ nav {
     .basket {
       margin-left: auto;
   
-      @media (width >= 768px) {
+      @media (width >= $sm) {
         margin-left: 0;
       }
     }
@@ -21,17 +23,17 @@ nav {
       margin: 0;
       cursor: pointer;
   
-      @media (width >= 768px) {
+      @media (width >= $sm) {
         margin: 0 auto;
       }
     }
 }
 
 .basket {
-    background-color: #147594;
+    background-color: $mainHover;
     min-width: 129px;
     height: 76.644px;
-    color: white;
+    color: $white;
     justify-content: center;
     display: flex;
     align-items: Center;

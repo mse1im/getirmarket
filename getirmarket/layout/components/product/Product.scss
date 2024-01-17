@@ -1,3 +1,5 @@
+@import "@/app/styles/variables";
+
 .product {
     width: 100%;
     display: flex;
@@ -27,13 +29,13 @@
             }
 
             span.price {
-                color: #1ea4ce;
+                color: $mainColor;
                 font-weight: 700;
             }
 
             span.title {
                 font-weight: 600;
-                color: #191919;
+                color: $grayscale;
             }
 
             span.tl {
@@ -42,8 +44,8 @@
         }
     }
     button {
-        background-color: #1ea4ce;
-        color:white;
+        background-color: $mainColor;
+        color:$white;
         outline: none;
         border: none;
         cursor: pointer;

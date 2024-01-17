@@ -1,0 +1,99 @@
+@import "@/app/styles/variables";
+
+h4 {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.content {
+    border-radius: 2px;
+    background: $white;
+    box-shadow: $shadow;
+    padding: 24px;
+    margin-bottom: 24px;
+
+    &.sort {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            input {
+                box-shadow: 0px 0px 0px 2px #DFDEE2;
+                font-size: 3em;
+                width: 18px;
+                height: 18px;
+                margin-right: 7px;
+                border: 2px solid $white;
+                background-clip: border-box;
+                border-radius: 50%;
+                appearance: none;
+                transition: background-color 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+
+                &:checked {
+                    box-shadow: 0px 0px 0px 2px $mainColor;
+                }
+            }
+        }
+
+    }
+
+    .search {
+        border-radius: 2px;
+        border: 2px solid #E0E0E0;
+        outline: 0;
+        padding: 16px;
+        margin-bottom: 20px;
+
+        &::placeholder {
+            color:#A8A8A8;
+        }
+    }
+
+}
+
+.brands, .tags {
+    height: 250px;
+    overflow-y: scroll;
+    padding: 2px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        input {
+            box-shadow: 0px 0px 0px 2px #DFDEE2;
+            font-size: 3em;
+            width: 18px;
+            height: 18px;
+            margin-right: 7px;
+            border: 2px solid $white;
+            background-clip: border-box;
+            appearance: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+
+            &:checked {
+                box-shadow: 0px 0px 0px 2px $mainColor;
+                background-color: $mainColor;
+                border-color: $mainColor;
+            }
+        }
+    }
+
+}
