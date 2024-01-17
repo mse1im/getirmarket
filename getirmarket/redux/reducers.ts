@@ -1,22 +1,38 @@
-import { ItemActionTypes, Item } from './actions';
-import { SET_ITEMS } from '../types/redux/action.model';
-
+import { SET_ITEMS, SET_BRANDS, Item, Brands } from '../types/redux/action.model';
+import { AnyAction } from 'redux';
 interface ItemState {
   items: Item[];
+}
+interface BrandState {
+  brands: Brands[];
 }
 
 const initialState: ItemState = {
   items: [],
 };
 
-export const itemReducer = (state = initialState, action: ItemActionTypes): ItemState => {
-  switch (action.type) {
-    case SET_ITEMS:
-      return {
-        ...state,
-        items: action.payload,
-      };
-    default:
-      return state;
+const initialBrandState: BrandState = {
+  brands: [],
+};
+
+export const itemReducer = (state: ItemState = initialState, action: AnyAction): ItemState => {
+  if (action.type === SET_ITEMS && Array.isArray(action.payload)) {
+    return {
+      ...state,
+      items: action.payload as Item[],
+    };
+  } else {
+    return state;
+  }
+};
+
+export const brandReducer = (state: BrandState = initialBrandState, action: AnyAction): BrandState => {
+  if (action.type === SET_BRANDS && Array.isArray(action.payload)) {
+    return {
+      ...state,
+      brands: action.payload as Brands[],
+    };
+  } else {
+    return state;
   }
 };

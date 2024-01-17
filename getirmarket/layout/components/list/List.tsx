@@ -4,14 +4,13 @@ import Pagination from "../pagination/Pagination";
 import Type from "../filters/type/Type";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { AppState } from "@/redux/store";
-import { setItems } from "@/redux/actions";
-import itemsData from '../../json/items.json';
+import { RootState } from "@/redux/store";
+import { setBrands, setItems } from "@/redux/actions";
 import "./List.scss";
 
 const List: React.FC<IProductProps> = () => {
   const dispatch = useDispatch();
-  const allItems = useSelector((state: AppState) => state.item.items);
+  const allItems = useSelector((state: RootState) => state.item.items);
   const [filteredItems, setFilteredItems] = useState(allItems);
   const [activeTag, setActiveTag] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,7 +35,8 @@ const List: React.FC<IProductProps> = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   useEffect(() => {
-    dispatch(setItems(itemsData));
+    dispatch(setItems());
+    dispatch(setBrands());
   }, [dispatch]);
 
   useEffect(() => {
