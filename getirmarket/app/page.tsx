@@ -6,7 +6,7 @@ import List from '@/layout/components/list/List';
 import { store } from '@/redux/store';
 import { Provider } from 'react-redux';
 
-const Homepage: React.FC<IHomePageProps> = () => {
+const Homepage = () => {
   return (
     <Provider store={store}>
       <Header />
