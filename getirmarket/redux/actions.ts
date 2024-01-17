@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux';
-import { SET_ITEMS, SET_BRANDS, SetItemsAction } from "../types/redux/action.model";
+import { SET_ITEMS, SetItemsAction } from "../types/redux/action.model";
+import { SET_BRANDS } from '@/types/redux/brand.model';
 
 export type ItemActionTypes = SetItemsAction;
 

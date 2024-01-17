@@ -1,14 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Product.scss"
 import { addToCart } from "@/redux/actions";
+import { RootState } from "@/redux/store";
 
 const Product: React.FC<IProductProps> = ({ name, price }) => {
   const dispatch = useDispatch();
+  const total = useSelector((state: RootState) => state.cart.total);
 
   const handleAddToCart = () => {
     const item = { name, price };
     dispatch(addToCart(item));
   };
+
   return (
     <div className="product">
       <figure>

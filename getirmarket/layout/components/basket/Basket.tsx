@@ -3,7 +3,6 @@ import { RootState } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import { increaseQuantity, decreaseQuantity } from "@/redux/actions";
 import "./Basket.scss";
-
 interface IBasketProps {}
 
 const Basket: React.FC<IBasketProps> = () => {

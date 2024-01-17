@@ -9,8 +9,8 @@ import { setBrands, setItems } from "@/redux/actions";
 import Sorting from "../filters/sorting/Sorting";
 import Spin from "../spin/Spin";
 import Brands from "../filters/brands/Brands";
-import "./List.scss";
 import Tags from "../filters/tags/Tags";
+import "./List.scss";
 
 const List: React.FC<IProductProps> = () => {
   const dispatch = useDispatch();
@@ -88,11 +88,12 @@ const List: React.FC<IProductProps> = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       await dispatch(setItems());
       await dispatch(setBrands());
       setIsLoading(false);
     };
-
+  
     fetchData();
   }, [dispatch]);
 

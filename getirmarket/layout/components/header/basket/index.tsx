@@ -1,10 +1,8 @@
 import { RootState } from "@/redux/store";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Basket: React.FC = () => {
   const total = useSelector((state: RootState) => state.cart.total);
-
   return (
     <div className="basket">
       <span className="icon">
