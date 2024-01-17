@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux";
 import "./Product.scss"
+import { addToCart } from "@/redux/actions";
 
 const Product: React.FC<IProductProps> = ({ name, price }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    const item = { name, price };
+    dispatch(addToCart(item));
+  };
   return (
     <div className="product">
       <figure>
@@ -10,7 +18,7 @@ const Product: React.FC<IProductProps> = ({ name, price }) => {
           <span className="title">{name}</span>
         </figcaption>
       </figure>
-      <button>Add</button>
+      <button onClick={handleAddToCart}>Add</button>
     </div>
   );
 };

@@ -5,7 +5,6 @@
     flex-direction: column;
     border-radius: 2px;
     background: $white;
-    height: 250px;
     border: 10px solid $mainColor;
     padding: 24px;
     justify-content: space-between;
@@ -18,14 +17,50 @@
     &-item {
         display: flex;
         align-self: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #F4F4F4;
+        
         &-info {
             display: flex;
             flex-direction: column;
             span {
+              font-weight: 400;
+              line-height: 18px;
+              letter-spacing: 0.16px
+            }
+            span.title {
+              color:$black600;
+            }
+            span.price {
+              color:$mainColor;
             }
         }
         &-action {
-            
+          display: flex;
+          align-items: center;
+
+            button {
+              color: $mainColor;
+              font-size: 25px;
+              font-weight: 400;
+              background-color: $white;
+              outline: 0;
+              border: 0;
+              padding: 0 10px;
+              cursor: pointer;
+            }
+
+            span {
+              background-color: $mainColor;
+              color:$white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 13px;
+            }
         }
     }
 
