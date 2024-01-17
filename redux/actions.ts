@@ -1,35 +1,38 @@
-import { Dispatch } from 'redux';
+import { Dispatch } from "redux";
 import { SET_ITEMS, SetItemsAction } from "../types/redux/action.model";
-import { SET_BRANDS } from '@/types/redux/brand.model';
-import { ThunkAction } from 'redux-thunk';
-import { AnyAction } from 'redux';
+import { SET_BRANDS } from "@/types/redux/brand.model";
 
 export type ItemActionTypes = SetItemsAction;
 
 export const addToCart = (item: any) => {
   return {
-    type: 'ADD_TO_CART',
+    type: "ADD_TO_CART",
     payload: item,
   };
 };
 
 export const increaseQuantity = (name: string, price: number) => {
   return {
-    type: 'INCREASE_QUANTITY',
+    type: "INCREASE_QUANTITY",
     payload: { name, price },
   };
 };
 
 export const decreaseQuantity = (name: string, price: number) => {
   return {
-    type: 'DECREASE_QUANTITY',
+    type: "DECREASE_QUANTITY",
     payload: { name, price },
   };
 };
 
 export const setItems = () => async (dispatch: Dispatch) => {
   try {
-    const response = await fetch("http://localhost:3001/items");
+    const apiUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3001/items"
+        : "https://getirmarket-ul4d.vercel.app/layout/json/items.json";
+
+    const response = await fetch(apiUrl);
     const items = await response.json();
     dispatch({
       type: SET_ITEMS,
@@ -42,7 +45,12 @@ export const setItems = () => async (dispatch: Dispatch) => {
 
 export const setBrands = () => async (dispatch: Dispatch) => {
   try {
-    const response = await fetch("http://localhost:3001/brands");
+    const apiUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3001/brands"
+        : "https://getirmarket-ul4d.vercel.app/layout/json/companies.json";
+
+    const response = await fetch(apiUrl);
     const items = await response.json();
     dispatch({
       type: SET_BRANDS,
