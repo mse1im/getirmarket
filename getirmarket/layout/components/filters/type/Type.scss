@@ -1,0 +1,12 @@
+.type {
+    border-radius: 2px;
+    padding: 6px 16px;
+    cursor: pointer;
+    background-color: #F2F0FD;
+    color:rgb(30, 164, 206);
+
+    &.active {
+        background-color: rgb(30, 164, 206);
+        color:white;
+    }
+}

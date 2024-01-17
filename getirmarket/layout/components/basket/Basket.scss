@@ -1,0 +1,45 @@
+.basket-lg {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    background: #fff;
+    height: 250px;
+    border: 10px solid #1ea4ce;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: flex-end;
+  
+    @media (width < 768px) {
+      position: fixed;
+      right: 20px;
+    }
+    &-item {
+        display: flex;
+        align-self: flex-start;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            span {
+            }
+        }
+        &-action {
+            
+        }
+    }
+
+    &-price {
+        border-radius: 2px;
+        border: 2px solid #1ea4ce;
+        background: #fff;
+        padding: 24px;
+        min-width: 90px;
+      
+        span {
+          color: #1ea4ce;
+          text-align: right;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 16px;
+        }
+    }
+}
