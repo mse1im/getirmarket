@@ -30,7 +30,7 @@ export const setItems = () => async (dispatch: Dispatch) => {
     const apiUrl =
       process.env.NODE_ENV === "development"
         ? "http://localhost:3001/items"
-        : "https://getirmarket-ul4d.vercel.app/layout/json/items.json";
+        : "https://raw.githubusercontent.com/mse1im/getirmarket/main/layout/json/items.json";
 
     const response = await fetch(apiUrl);
     const items = await response.json();
@@ -48,7 +48,7 @@ export const setBrands = () => async (dispatch: Dispatch) => {
     const apiUrl =
       process.env.NODE_ENV === "development"
         ? "http://localhost:3001/brands"
-        : "https://getirmarket-ul4d.vercel.app/layout/json/companies.json";
+        : "https://raw.githubusercontent.com/mse1im/getirmarket/main/layout/json/companies.json";
 
     const response = await fetch(apiUrl);
     const items = await response.json();
