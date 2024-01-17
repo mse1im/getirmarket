@@ -1,6 +1,8 @@
 import { Dispatch } from 'redux';
 import { SET_ITEMS, SetItemsAction } from "../types/redux/action.model";
 import { SET_BRANDS } from '@/types/redux/brand.model';
+import { ThunkAction } from 'redux-thunk';
+import { AnyAction } from 'redux';
 
 export type ItemActionTypes = SetItemsAction;
 
