@@ -31,11 +31,13 @@
             span.price {
                 color: $mainColor;
                 font-weight: 700;
+                @include overflow(1, 20px);
             }
 
             span.title {
                 font-weight: 600;
                 color: $grayscale;
+                @include overflow(2, 40px);
             }
 
             span.tl {

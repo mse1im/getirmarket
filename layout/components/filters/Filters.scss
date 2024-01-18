@@ -26,6 +26,10 @@ h4 {
             align-items: center;
             cursor: pointer;
 
+            svg {
+                display: none;
+            }
+
             input {
                 box-shadow: 0px 0px 0px 2px #DFDEE2;
                 font-size: 3em;
@@ -39,9 +43,17 @@ h4 {
                 transition: background-color 0.3s, box-shadow 0.3s;
                 cursor: pointer;
 
+
                 &:checked {
                     box-shadow: 0px 0px 0px 2px $mainColor;
                 }
+            }
+
+            input:checked ~ svg {
+                display: flex;
+                position: absolute;
+                left: 4px;
+                top: 7px
             }
         }
 
@@ -56,13 +68,14 @@ h4 {
         width: 100%;
 
         &::placeholder {
-            color:#A8A8A8;
+            color: #A8A8A8;
         }
     }
 
 }
 
-.brands, .tags {
+.brands,
+.tags {
     height: 250px;
     overflow-y: scroll;
     padding: 2px;
@@ -71,11 +84,45 @@ h4 {
     flex-direction: column;
     gap: 16px;
 
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: $white;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #E0E0E0;
+    }
+
     label {
         position: relative;
         display: flex;
         align-items: center;
         cursor: pointer;
+        justify-content: flex-start;
+
+        svg {
+            display: none;
+        }
+
+        span.title {
+            color: #525252;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0.16px;
+            @include overflow(1, 20px);
+        }
+
+        span.count {
+            color: #A8A8A8;
+            margin-left: 6px;
+        }
 
         input {
             box-shadow: 0px 0px 0px 2px #DFDEE2;
@@ -86,6 +133,7 @@ h4 {
             border: 2px solid $white;
             background-clip: border-box;
             appearance: none;
+            border-radius: 2px;
             transition: background-color 0.3s, box-shadow 0.3s;
             cursor: pointer;
 
@@ -94,6 +142,13 @@ h4 {
                 background-color: $mainColor;
                 border-color: $mainColor;
             }
+        }
+
+        input:checked ~ svg {
+            display: flex;
+            position: absolute;
+            left: 4px;
+            top: 7px
         }
     }
 

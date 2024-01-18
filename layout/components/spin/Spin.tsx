@@ -2,7 +2,7 @@ import "./Spin.scss";
 
 const Spin: React.FC<ISpinProps> = ({ spinning, children }) => {
   return (
-    <div>
+    <>
       {spinning ? (
         <div className="spin">
           <div className="loader"></div>
@@ -10,7 +10,7 @@ const Spin: React.FC<ISpinProps> = ({ spinning, children }) => {
       ) : (
         children
       )}
-    </div>
+    </>
   );
 };
 

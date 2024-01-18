@@ -60,7 +60,22 @@ const Brands: React.FC<IBrandsProps> = ({ onSelectBrand }) => {
                 value="all"
                 onChange={() => onSelectBrand("all")}
               />
-              All ({totalItemCount})
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="7"
+                viewBox="0 0 10 7"
+                fill="none"
+              >
+                <path
+                  d="M9 1L3.5 6L1 3.72727"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              All <span className="count">({totalItemCount})</span>
             </label>
           )}
           {filteredBrands.map((brand) => (
@@ -71,7 +86,23 @@ const Brands: React.FC<IBrandsProps> = ({ onSelectBrand }) => {
                 value={brand.slug}
                 onChange={() => onSelectBrand(brand.slug)}
               />
-              {brand.name} ({brandCounts[brand.slug] || 0})
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="7"
+                viewBox="0 0 10 7"
+                fill="none"
+              >
+                <path
+                  d="M9 1L3.5 6L1 3.72727"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="title">{brand.name}</span>{" "}
+              <span className="count">({brandCounts[brand.slug] || 0})</span>
             </label>
           ))}
         </div>

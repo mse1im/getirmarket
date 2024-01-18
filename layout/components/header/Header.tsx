@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Container from "../container/Container";
 import Basket from "./basket/index";
-import "./Header.scss"
+import "./Header.scss";
 
 interface IHeaderProps {}
 
@@ -23,9 +23,7 @@ const Header: React.FC<IHeaderProps> = () => {
             height={41}
             onClick={goToHome}
           />
-          <div className="basket">
-            <Basket />
-          </div>
+          <Basket />
         </nav>
       </Container>
     </header>

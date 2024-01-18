@@ -1,0 +1,8 @@
+@mixin overflow($value, $height) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $value;
+    overflow: hidden;
+    min-height: $height;
+    max-height: $height;
+}
